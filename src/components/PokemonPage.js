@@ -6,15 +6,16 @@ import { Container } from 'semantic-ui-react'
 
 class PokemonPage extends React.Component {
   render() {
+    console.log(this.props.pokemon)
     return (
       <Container>
         <h1>Pokemon Searcher</h1>
         <br />
-        <PokemonForm />
+        <PokemonForm addNewPokemon={this.props.addNewPokemon} />
         <br />
-        <Search />
+        <Search handleFilterTerm={this.props.handleFilterTerm} />
         <br />
-        <PokemonCollection />
+        <PokemonCollection pokemon={this.props.pokemon} />
       </Container>
     )
   }
